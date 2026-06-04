@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\appsistemasena\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\appsistemasena\\index.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\index.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\appsistemasena\\datos\\logind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\datos\\logind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|c:\\users\\sofia\\music\\visual studio\\appsistemasena\\appsistemasena\\datos\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\datos\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|c:\\users\\sofia\\music\\visual studio\\appsistemasena\\appsistemasena\\modelo\\administradorcentro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\modelo\\administradorcentro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\appsistemasena\\logica\\loginl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\logica\\loginl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|c:\\users\\sofia\\music\\visual studio\\appsistemasena\\appsistemasena\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E9D169C6-21B6-4474-8892-B1429E0409C3}|AppSistemaSena\\AppSistemaSena.csproj|solutionrelative:appsistemasena\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.aspx",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Index.aspx",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Index.aspx",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Index.aspx*",
+              "RelativeToolTip": "AppSistemaSena\\Index.aspx*",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-03T01:34:23.042Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Index.aspx.cs",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Index.aspx.cs",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Index.aspx.cs",
+              "RelativeToolTip": "AppSistemaSena\\Index.aspx.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T18:25:36.012Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdministradorCentro.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Modelo\\AdministradorCentro.cs",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Modelo\\AdministradorCentro.cs",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Modelo\\AdministradorCentro.cs",
+              "RelativeToolTip": "AppSistemaSena\\Modelo\\AdministradorCentro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T02:12:14.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Web.config",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Web.config",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Web.config",
+              "RelativeToolTip": "AppSistemaSena\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-06-04T01:09:44.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConexionBD.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Datos\\ConexionBD.cs",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Datos\\ConexionBD.cs",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Datos\\ConexionBD.cs",
+              "RelativeToolTip": "AppSistemaSena\\Datos\\ConexionBD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T00:27:56.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginL.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Logica\\LoginL.cs",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Logica\\LoginL.cs",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Logica\\LoginL.cs",
+              "RelativeToolTip": "AppSistemaSena\\Logica\\LoginL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T00:08:28.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginD.cs",
+              "DocumentMoniker": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Datos\\LoginD.cs",
+              "RelativeDocumentMoniker": "AppSistemaSena\\Datos\\LoginD.cs",
+              "ToolTip": "C:\\Users\\sofia\\Music\\Visual Studio\\AppSistemaSena\\AppSistemaSena\\Datos\\LoginD.cs",
+              "RelativeToolTip": "AppSistemaSena\\Datos\\LoginD.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwBIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T00:04:58.068Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
