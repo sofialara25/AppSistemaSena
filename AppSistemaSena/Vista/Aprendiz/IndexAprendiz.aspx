@@ -1,12 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexAprendiz.aspx.cs" Inherits="AppSistemaSena.Vista.Aprendiz.IndexAprendiz" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexAprendiz.aspx.cs"
+    Inherits="AppSistemaSena.Vista.Aprendiz.IndexAprendiz" MasterPageFile="~/Site1.master" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Portal Aprendiz - AppSistemaSena</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         /* =============================================
            RESET Y BASE
@@ -27,7 +22,7 @@
            ============================================= */
         .sidebar {
             display: flex;
-            min-height: 100vh;
+            min-height: calc(100vh - 52px);
         }
 
         .main {
@@ -51,27 +46,10 @@
             border-bottom: 1px solid #e0e0e0;
         }
 
-            .nav-header .logo {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-                .nav-header .logo i {
-                    font-size: 20px;
-                    color: #185FA5;
-                }
-
-                .nav-header .logo span {
-                    font-size: 14px;
-                    font-weight: 500;
-                }
-
             .nav-header .role {
-                font-size: 11px;
+                font-size: 12px;
                 color: #888;
-                margin-top: 2px;
-                padding-left: 28px;
+                font-weight: 500;
             }
 
         .nav-section-label {
@@ -265,130 +243,128 @@
             color: #888;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
 
-        <div class="sidebar">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-            <!-- Barra lateral -->
-            <nav class="nav">
-                <div class="nav-header">
-                    <div class="logo">
-                        <i class="ti ti-school"></i>
-                        <span>AppSistemaSena</span>
+    <div class="sidebar">
+
+        <!-- Barra lateral -->
+        <nav class="nav">
+            <div class="nav-header">
+                <div class="role">Portal del aprendiz</div>
+            </div>
+
+            <div class="nav-section-label">Mi perfil</div>
+            <div class="nav-item" onclick="showPage('datos', this)"><i class="ti ti-user"></i><a href="misDatos.aspx">Ver mis datos</a></div>
+            <div class="nav-item" onclick="showPage('ficha', this)"><i class="ti ti-id-badge"></i>Ficha asignada</div>
+            <div class="nav-item" onclick="showPage('estado', this)"><i class="ti ti-chart-line"></i>Estado académico</div>
+
+            <div class="nav-section-label">Académico</div>
+            <div class="nav-item" onclick="showPage('resultados', this)"><i class="ti ti-clipboard-list"></i>Resultados pendientes</div>
+            <div class="nav-item" onclick="showPage('planes', this)"><i class="ti ti-file-description"></i>Planes asignados</div>
+            <div class="nav-item" onclick="showPage('observaciones', this)"><i class="ti ti-message-circle"></i>Observaciones</div>
+
+            <div class="nav-section-label">Evidencias</div>
+            <div class="nav-item active" onclick="showPage('evidencias', this)"><i class="ti ti-paperclip"></i>Gestión de evidencias</div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main">
+
+            <!-- Evidencias -->
+            <div id="page-evidencias">
+                <div class="page-title">Gestión de evidencias</div>
+                <div class="page-sub">Sube y consulta tus evidencias del plan de mejoramiento</div>
+
+                <div class="cards-grid">
+                    <div class="stat-card">
+                        <div class="label">Total subidas</div>
+                        <div class="value">0</div>
+                        <div class="sub">archivos</div>
                     </div>
-                    <div class="role">Portal del aprendiz</div>
-                </div>
-
-                <div class="nav-section-label">Mi perfil</div>
-                <div class="nav-item" onclick="showPage('datos', this)"><i class="ti ti-user"></i>Mis datos</div>
-                <div class="nav-item" onclick="showPage('ficha', this)"><i class="ti ti-id-badge"></i>Ficha asignada</div>
-                <div class="nav-item" onclick="showPage('estado', this)"><i class="ti ti-chart-line"></i>Estado académico</div>
-
-                <div class="nav-section-label">Académico</div>
-                <div class="nav-item" onclick="showPage('resultados', this)"><i class="ti ti-clipboard-list"></i>Resultados pendientes</div>
-                <div class="nav-item" onclick="showPage('planes', this)"><i class="ti ti-file-description"></i>Planes asignados</div>
-                <div class="nav-item" onclick="showPage('observaciones', this)"><i class="ti ti-message-circle"></i>Observaciones</div>
-
-                <div class="nav-section-label">Evidencias</div>
-                <div class="nav-item active" onclick="showPage('evidencias', this)"><i class="ti ti-paperclip"></i>Gestión de evidencias</div>
-            </nav>
-
-            <!-- Contenido principal -->
-            <main class="main">
-
-                <!-- Evidencias -->
-                <div id="page-evidencias">
-                    <div class="page-title">Evidencias</div>
-                    <div class="page-sub">Sube y consulta tus evidencias del plan de mejoramiento</div>
-
-                    <div class="cards-grid">
-                        <div class="stat-card">
-                            <div class="label">Total subidas</div>
-                            <div class="value">0</div>
-                            <div class="sub">archivos</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="label">Pendientes</div>
-                            <div class="value">0</div>
-                            <div class="sub">por revisar</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="label">Aprobadas</div>
-                            <div class="value">0</div>
-                            <div class="sub">aceptadas</div>
-                        </div>
+                    <div class="stat-card">
+                        <div class="label">Pendientes</div>
+                        <div class="value">0</div>
+                        <div class="sub">por revisar</div>
                     </div>
-
-                    <div class="section-title">Evidencias subidas</div>
-                    <div class="evidencias-box">
-                        <div class="ev-header">
-                            <span>Mis archivos</span>
-                            <asp:Button ID="btnSubir" runat="server" Text="⬆ Subir evidencia" CssClass="upload-btn" OnClick="btnSubir_Click" />
-                        </div>
-                        <div class="empty-state">
-                            <i class="ti ti-folder-open"></i>
-                            Aún no hay evidencias subidas
-                        </div>
-                    </div>
-
-                    <div class="drop-zone">
-                        <i class="ti ti-cloud-upload"></i>
-                        Arrastra tu archivo aquí o haz clic para seleccionar
-                        <div class="fmt-pills">
-                            <span class="fmt-pill">PDF</span>
-                            <span class="fmt-pill">DOCX</span>
-                            <span class="fmt-pill">JPG</span>
-                            <span class="fmt-pill">PNG</span>
-                            <span class="fmt-pill">ZIP</span>
-                        </div>
+                    <div class="stat-card">
+                        <div class="label">Aprobadas</div>
+                        <div class="value">0</div>
+                        <div class="sub">aceptadas</div>
                     </div>
                 </div>
 
-                <!-- Mis datos -->
-                <div id="page-datos" class="hidden">
-                    <div class="page-title">Mis datos</div>
-                    <div class="page-sub">Información personal del aprendiz</div>
+                <div class="section-title">Evidencias subidas</div>
+                <div class="evidencias-box">
+                    <div class="ev-header">
+                        <span>Mis archivos</span>
+                        <asp:Button ID="btnSubir" runat="server" Text="⬆ Subir evidencia"
+                            CssClass="upload-btn" OnClick="btnSubir_Click" />
+                    </div>
+                    <div class="empty-state">
+                        <i class="ti ti-folder-open"></i>
+                        Aún no hay evidencias subidas
+                    </div>
                 </div>
 
-                <!-- Ficha -->
-                <div id="page-ficha" class="hidden">
-                    <div class="page-title">Ficha asignada</div>
-                    <div class="page-sub">Datos de la ficha de formación</div>
+                <div class="drop-zone">
+                    <i class="ti ti-cloud-upload"></i>
+                    Arrastra tu archivo aquí o haz clic para seleccionar
+                    <div class="fmt-pills">
+                        <span class="fmt-pill">PDF</span>
+                        <span class="fmt-pill">DOCX</span>
+                        <span class="fmt-pill">JPG</span>
+                        <span class="fmt-pill">PNG</span>
+                        <span class="fmt-pill">ZIP</span>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Estado académico -->
-                <div id="page-estado" class="hidden">
-                    <div class="page-title">Estado académico</div>
-                    <div class="page-sub">Resumen de tu situación académica actual</div>
+            <!-- Mis datos -->
+            <div id="page-datos" class="hidden">
+                <div class="page-title">Mis datos</div>
+                <div class="page-sub">Información personal del aprendiz</div>
+            </div>
+
+            <!-- Ficha -->
+            <div id="page-ficha" class="hidden">
+                <div class="page-title">
+                    Ficha asignada
                 </div>
+                <div class="page-sub">Datos de la ficha de formación</div>
+            </div>
 
-                <!-- Resultados -->
-                <div id="page-resultados" class="hidden">
-                    <div class="page-title">Resultados pendientes</div>
-                    <div class="page-sub">Resultados de aprendizaje sin evaluar</div>
-                </div>
+            <!-- Estado académico -->
+            <div id="page-estado" class="hidden">
+                <div class="page-title">Estado académico</div>
+                <div class="page-sub">Resumen de tu situación académica actual</div>
+            </div>
 
-                <!-- Planes -->
-                <div id="page-planes" class="hidden">
-                    <div class="page-title">Planes asignados</div>
-                    <div class="page-sub">Planes de mejoramiento asignados por el instructor</div>
-                </div>
+            <!-- Resultados -->
+            <div id="page-resultados" class="hidden">
+                <div class="page-title">Resultados pendientes</div>
+                <div class="page-sub">Resultados de aprendizaje sin evaluar</div>
+            </div>
 
-                <!-- Observaciones -->
-                <div id="page-observaciones" class="hidden">
-                    <div class="page-title">Observaciones</div>
-                    <div class="page-sub">Observaciones registradas por los instructores</div>
-                </div>
+            <!-- Planes -->
+            <div id="page-planes" class="hidden">
+                <div class="page-title">Planes asignados</div>
+                <div class="page-sub">Planes de mejoramiento asignados por el instructor</div>
+            </div>
 
-            </main>
-        </div>
+            <!-- Observaciones -->
+            <div id="page-observaciones" class="hidden">
+                <div class="page-title">Observaciones</div>
+                <div class="page-sub">Observaciones registradas por los instructores</div>
+            </div>
 
-        <%-- HiddenField SIEMPRE antes del script --%>
-        <asp:HiddenField ID="hfPaginaActiva" runat="server" Value="evidencias" />
+        </main>
+    </div>
 
-        <script>
+    <asp:HiddenField ID="hfPaginaActiva" runat="server" Value="evidencias" />
+
+    <script>
 function showPage(name, el) {
     document.querySelectorAll('[id^="page-"]').forEach(p => p.classList.add('hidden'));
     document.getElementById('page-' + name).classList.remove('hidden');
@@ -399,15 +375,13 @@ function showPage(name, el) {
 
 window.onload = function () {
     var pagina = document.getElementById('<%= hfPaginaActiva.ClientID %>').value || 'evidencias';
-                var items = document.querySelectorAll('.nav-item');
-                items.forEach(function (item) {
-                    if (item.getAttribute('onclick') && item.getAttribute('onclick').includes("'" + pagina + "'")) {
-                        showPage(pagina, item);
-                    }
-                });
-            };
-        </script>
+    var items = document.querySelectorAll('.nav-item');
+    items.forEach(function (item) {
+        if (item.getAttribute('onclick') && item.getAttribute('onclick').includes("'" + pagina + "'")) {
+            showPage(pagina, item);
+        }
+    });
+};
+    </script>
 
-    </form>
-</body>
-</html>
+</asp:Content>

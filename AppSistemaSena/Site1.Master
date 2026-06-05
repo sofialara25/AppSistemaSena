@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AppSistemaSena.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>AppSistemaSena</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+    <style>
+        /* =============================================
+           RESET Y BASE
+           ============================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Segoe UI, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* =============================================
+           HEADER
+           ============================================= */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1B3A6B;
+            padding: 0 24px;
+            height: 52px;
+            flex-shrink: 0;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .header-logo i {
+            font-size: 20px;
+            color: #C8A94A;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-user {
+            font-size: 13px;
+            color: #ccd6e8;
+        }
+
+        .btn-cerrar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #fff;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            padding: 5px 12px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-cerrar:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .btn-cerrar i {
+            font-size: 15px;
+        }
+
+        /* =============================================
+           CONTENIDO
+           ============================================= */
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Header global -->
+        <header class="header">
+            <div class="header-logo">
+                <i class="ti ti-school"></i>
+                AppSistemaSena
+            </div>
+            <div class="header-right">
+                <span class="header-user">
+                    <i class="ti ti-user-circle"></i>
+                    <asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label>
+                </span>
+                <asp:LinkButton ID="btnCerrarSesion" runat="server" CssClass="btn-cerrar" OnClick="btnCerrarSesion_Click">
+                    <i class="ti ti-logout"></i> Cerrar sesión
+                </asp:LinkButton>
+            </div>
+        </header>
+
+        <!-- Contenido de cada página -->
+        <div class="content-wrapper">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
