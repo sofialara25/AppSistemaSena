@@ -50,7 +50,7 @@ namespace AppSistemaSena
 
             if (oDatosSesion != null)
             {
-                lblMensaje.Text = "Ingreso exitoso como " + tipoUsuario;
+                lblMensaje.Text = "Ingreso exitoso como " + oDatosSesion.Nombre + " ";
                 lblMensaje.ForeColor = System.Drawing.Color.Green;
 
                 ClientScript.RegisterStartupScript(
@@ -59,6 +59,18 @@ namespace AppSistemaSena
                     "Swal.fire('Bienvenido', 'Has ingresado correctamente', 'success');",
                     true
                 );
+                if(tipoUsuario == "Instructor")
+                {
+                    Response.Redirect("Vista/Instructor/IndexInstructor.aspx");
+                }
+                else if (tipoUsuario == "Aprendiz")
+                {
+                    Response.Redirect("Vista/Aprendiz/IndexAprendiz.aspx");
+                }
+                else if (tipoUsuario == "AdministradorCentro")
+                {
+                    Response.Redirect("Vista/AdministradorCentro/IndexAdministrador.aspx");
+                }
             }
             else
             {
