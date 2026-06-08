@@ -3,14 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AppSistemaSena</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
     <style>
-        /* =============================================
-           RESET Y BASE
-           ============================================= */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,16 +15,14 @@
         }
 
         body {
-            font-family: Segoe UI, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background: #f4f4f4;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* =============================================
-           HEADER
-           ============================================= */
+        /* ── HEADER ── */
         .header {
             display: flex;
             justify-content: space-between;
@@ -48,10 +43,10 @@
             text-decoration: none;
         }
 
-        .header-logo i {
-            font-size: 20px;
-            color: #C8A94A;
-        }
+            .header-logo i {
+                font-size: 20px;
+                color: #C8A94A;
+            }
 
         .header-right {
             display: flex;
@@ -62,6 +57,9 @@
         .header-user {
             font-size: 13px;
             color: #ccd6e8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .btn-cerrar {
@@ -78,26 +76,67 @@
             text-decoration: none;
         }
 
-        .btn-cerrar:hover {
-            background: rgba(255,255,255,0.1);
-        }
+            .btn-cerrar:hover {
+                background: rgba(255,255,255,0.1);
+            }
 
-        .btn-cerrar i {
-            font-size: 15px;
-        }
+            .btn-cerrar i {
+                font-size: 15px;
+            }
 
-        /* =============================================
-           CONTENIDO
-           ============================================= */
-        .content-wrapper {
+        /* ── LAYOUT PRINCIPAL ── */
+        .main-layout {
             flex: 1;
             display: flex;
-            flex-direction: column;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            width: 220px;
+            background: #1B3A6B;
+            flex-shrink: 0;
+            padding: 20px 0;
+        }
+
+        .sidebar-section-title {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.4);
+            padding: 0 20px 8px;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.15s;
+        }
+
+            .sidebar a:hover {
+                background: rgba(255,255,255,0.08);
+                color: #fff;
+            }
+
+            .sidebar a i {
+                font-size: 17px;
+                color: #C8A94A;
+            }
+
+        /* ── CONTENIDO ── */
+        .page-content {
+            flex: 1;
+            padding: 28px;
+            overflow-y: auto;
         }
     </style>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -111,18 +150,81 @@
             <div class="header-right">
                 <span class="header-user">
                     <i class="ti ti-user-circle"></i>
-                    <asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblUsuario" runat="server" />
                 </span>
-                <asp:LinkButton ID="btnCerrarSesion" runat="server" CssClass="btn-cerrar" OnClick="btnCerrarSesion_Click">
-                    <i class="ti ti-logout"></i> Cerrar sesión
+                <asp:LinkButton ID="btnCerrarSesion" runat="server"
+                    CssClass="btn-cerrar"
+                    OnClick="btnCerrarSesion_Click">
+                <i class="ti ti-logout"></i> Cerrar sesión
                 </asp:LinkButton>
             </div>
         </header>
 
-        <!-- Contenido de cada página -->
-        <div class="content-wrapper">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <!-- Layout: sidebar + contenido -->
+        <div class="main-layout">
+
+            <!-- Sidebar con menú según rol -->
+            <nav class="sidebar">
+
+                <!-- Menú Aprendiz -->
+                <asp:Panel ID="pnlMenuAprendiz" runat="server" Visible="false">
+                    <div class="sidebar-section-title">Aprendiz</div>
+
+                    <a href='<%= ResolveUrl("~/Aprendiz/MiPlan.aspx") %>'>
+                        <i class="ti ti-clipboard-list"></i>Mi plan de mejoramiento
+                    </a>
+                    <a href='<%= ResolveUrl("~/Aprendiz/MisEvidencias.aspx") %>'>
+                        <i class="ti ti-file-check"></i>Mis evidencias
+                    </a>
+                    <%--<a href='<%= ResolveUrl("~/Aprendiz/Competencias.aspx") %>
+                    <i class="ti ti-book"></i> Ver competencias'>
+                </a>--%>
+                    <a href='<%= ResolveUrl("~/Aprendiz/MiPerfil.aspx") %>'>
+                        <i class="ti ti-user"></i>Mi perfil
+                    </a>
+                </asp:Panel>
+
+                <!-- Menú Instructor -->
+                <asp:Panel ID="pnlMenuInstructor" runat="server" Visible="false">
+                    <div class="sidebar-section-title">Instructor</div>
+                    <a href='<%= ResolveUrl("~/Instructor/Fichas.aspx") %>'>
+                        <i class="ti ti-users"></i>Mis Fichas
+                    </a>
+                    <a href='<%= ResolveUrl("~/Instructor/Planes.aspx") %>'>
+                        <i class="ti ti-clipboard-list"></i>Planes de mejoramiento
+                    </a>
+                    <a href='<%= ResolveUrl("~/Instructor/Evaluar.aspx") %>'>
+                        <i class="ti ti-checkbox"></i>Evaluar aprendices
+                    </a>
+                    <%--<a href='<%= ResolveUrl("~/Instructor/Criterios.aspx") %>'>
+                    <i class="ti ti-list-check"></i> Criterios y evidencias
+                </a>--%>
+                </asp:Panel>
+
+                <!-- Menú Administrador -->
+                <asp:Panel ID="pnlMenuAdmin" runat="server" Visible="false">
+                    <div class="sidebar-section-title">Administrador</div>
+                    <a href='<%= ResolveUrl("~/Admin/Instructor.aspx") %>'>
+                        <i class="ti ti-users-group"></i>Instructores
+                    </a>
+                    <a href='<%= ResolveUrl("~/Admin/Aprendices.aspx") %>'>
+                        <i class="ti ti-users-group"></i>Aprendices
+                    </a>
+                    <a href='<%= ResolveUrl("~/Admin/Fichas.aspx") %>'>
+                        <i class="ti ti-school"></i>Fichas
+                    </a>
+                    <a href='<%= ResolveUrl("~/Admin/Programas.aspx") %>'>
+                        <i class="ti ti-school"></i>Programas
+                        </a>
+                </asp:Panel>
+
+            </nav>
+
+            <!-- Contenido de cada página -->
+            <div class="page-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </div>
+
         </div>
 
     </form>

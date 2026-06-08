@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.aspx" />
+    <Content Include="Vista\Aprendiz\GestionEvidencia.aspx" />
     <Content Include="Vista\Aprendiz\IndexAprendiz.aspx" />
-    <Content Include="Vista\Aprendiz\misDatos.aspx" />
+    <Content Include="Vista\Aprendiz\MisDatos.aspx" />
+    <Content Include="Vista\Aprendiz\PlanesAsignados.aspx" />
     <Content Include="Vista\Instructor\IndexInstructor.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -96,6 +98,13 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Aprendiz\GestionEvidencia.aspx.cs">
+      <DependentUpon>GestionEvidencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Aprendiz\GestionEvidencia.aspx.designer.cs">
+      <DependentUpon>GestionEvidencia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Aprendiz\IndexAprendiz.aspx.cs">
       <DependentUpon>IndexAprendiz.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,12 +112,19 @@
     <Compile Include="Vista\Aprendiz\IndexAprendiz.aspx.designer.cs">
       <DependentUpon>IndexAprendiz.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Aprendiz\misDatos.aspx.cs">
-      <DependentUpon>misDatos.aspx</DependentUpon>
+    <Compile Include="Vista\Aprendiz\MisDatos.aspx.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\Aprendiz\misDatos.aspx.designer.cs">
-      <DependentUpon>misDatos.aspx</DependentUpon>
+    <Compile Include="Vista\Aprendiz\MisDatos.aspx.designer.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Aprendiz\PlanesAsignados.aspx.cs">
+      <DependentUpon>PlanesAsignados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Aprendiz\PlanesAsignados.aspx.designer.cs">
+      <DependentUpon>PlanesAsignados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Instructor\IndexInstructor.aspx.cs">
       <DependentUpon>IndexInstructor.aspx</DependentUpon>

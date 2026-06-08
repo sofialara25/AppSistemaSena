@@ -11,22 +11,25 @@ namespace AppSistemaSena
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] != null)
+            if (Session["Rol"] == null)
             {
-                lblUsuario.Text = Session["Nombre"].ToString();
+                Response.Redirect("~/Index.aspx");
+                return;
             }
-        }
 
-        protected void lbCerrar_Click(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Session.Abandon();
-            Response.Redirect(".../Index.aspx");
+            string rol = Session["Rol"].ToString();
+
+            // Muestra el panel correcto, oculta los demás
+            pnlMenuAprendiz.Visible = (rol == "Aprendiz");
+            pnlMenuInstructor.Visible = (rol == "Instructor");
+            pnlMenuAdmin.Visible = (rol == "Administrador");
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Index.aspx");
         }
     }
 }

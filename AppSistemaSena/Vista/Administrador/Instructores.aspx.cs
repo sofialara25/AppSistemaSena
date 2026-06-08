@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AppSistemaSena.Vista.Aprendiz
+namespace AppSistemaSena.Vista.Administrador
 {
-    public partial class misDatos : System.Web.UI.Page
+    public partial class Instructores : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
