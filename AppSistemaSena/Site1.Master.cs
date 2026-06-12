@@ -22,7 +22,7 @@ namespace AppSistemaSena
             // Muestra el panel correcto, oculta los demás
             pnlMenuAprendiz.Visible = (rol == "Aprendiz");
             pnlMenuInstructor.Visible = (rol == "Instructor");
-            pnlMenuAdmin.Visible = (rol == "Administrador");
+            pnlMenuAdmin.Visible = (rol == "AdministradorCentro");
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

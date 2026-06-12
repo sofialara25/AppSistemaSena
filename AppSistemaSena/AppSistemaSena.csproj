@@ -68,11 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.aspx" />
-    <Content Include="Vista\Aprendiz\GestionEvidencia.aspx" />
+    <Content Include="Vista\Administrador\Aprendices.aspx" />
+    <Content Include="Vista\Administrador\Fichas.aspx" />
+    <Content Include="Vista\Administrador\IndexAdmin.aspx" />
+    <Content Include="Vista\Administrador\Instructores.aspx" />
+    <Content Include="Vista\Administrador\Programas.aspx" />
     <Content Include="Vista\Aprendiz\IndexAprendiz.aspx" />
-    <Content Include="Vista\Aprendiz\MisDatos.aspx" />
-    <Content Include="Vista\Aprendiz\PlanesAsignados.aspx" />
+    <Content Include="Vista\Aprendiz\MiPerfil.aspx" />
+    <Content Include="Vista\Aprendiz\MiPlan.aspx" />
+    <Content Include="Vista\Aprendiz\MisEvidencias.aspx" />
+    <Content Include="Vista\Instructor\Evaluar.aspx" />
+    <Content Include="Vista\Instructor\Fichas.aspx" />
     <Content Include="Vista\Instructor\IndexInstructor.aspx" />
+    <Content Include="Vista\Instructor\Planes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,12 +106,40 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Aprendiz\GestionEvidencia.aspx.cs">
-      <DependentUpon>GestionEvidencia.aspx</DependentUpon>
+    <Compile Include="Vista\Administrador\Aprendices.aspx.cs">
+      <DependentUpon>Aprendices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\Aprendiz\GestionEvidencia.aspx.designer.cs">
-      <DependentUpon>GestionEvidencia.aspx</DependentUpon>
+    <Compile Include="Vista\Administrador\Aprendices.aspx.designer.cs">
+      <DependentUpon>Aprendices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administrador\Fichas.aspx.cs">
+      <DependentUpon>Fichas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Administrador\Fichas.aspx.designer.cs">
+      <DependentUpon>Fichas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administrador\IndexAdmin.aspx.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Administrador\IndexAdmin.aspx.designer.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administrador\Instructores.aspx.cs">
+      <DependentUpon>Instructores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Administrador\Instructores.aspx.designer.cs">
+      <DependentUpon>Instructores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administrador\Programas.aspx.cs">
+      <DependentUpon>Programas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Administrador\Programas.aspx.designer.cs">
+      <DependentUpon>Programas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Aprendiz\IndexAprendiz.aspx.cs">
       <DependentUpon>IndexAprendiz.aspx</DependentUpon>
@@ -112,19 +148,40 @@
     <Compile Include="Vista\Aprendiz\IndexAprendiz.aspx.designer.cs">
       <DependentUpon>IndexAprendiz.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Aprendiz\MisDatos.aspx.cs">
-      <DependentUpon>MisDatos.aspx</DependentUpon>
+    <Compile Include="Vista\Aprendiz\MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\Aprendiz\MisDatos.aspx.designer.cs">
-      <DependentUpon>MisDatos.aspx</DependentUpon>
+    <Compile Include="Vista\Aprendiz\MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Aprendiz\PlanesAsignados.aspx.cs">
-      <DependentUpon>PlanesAsignados.aspx</DependentUpon>
+    <Compile Include="Vista\Aprendiz\MiPlan.aspx.cs">
+      <DependentUpon>MiPlan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\Aprendiz\PlanesAsignados.aspx.designer.cs">
-      <DependentUpon>PlanesAsignados.aspx</DependentUpon>
+    <Compile Include="Vista\Aprendiz\MiPlan.aspx.designer.cs">
+      <DependentUpon>MiPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Aprendiz\MisEvidencias.aspx.cs">
+      <DependentUpon>MisEvidencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Aprendiz\MisEvidencias.aspx.designer.cs">
+      <DependentUpon>MisEvidencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instructor\Evaluar.aspx.cs">
+      <DependentUpon>Evaluar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Instructor\Evaluar.aspx.designer.cs">
+      <DependentUpon>Evaluar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instructor\Fichas.aspx.cs">
+      <DependentUpon>Fichas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Instructor\Fichas.aspx.designer.cs">
+      <DependentUpon>Fichas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Instructor\IndexInstructor.aspx.cs">
       <DependentUpon>IndexInstructor.aspx</DependentUpon>
@@ -132,6 +189,13 @@
     </Compile>
     <Compile Include="Vista\Instructor\IndexInstructor.aspx.designer.cs">
       <DependentUpon>IndexInstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Instructor\Planes.aspx.cs">
+      <DependentUpon>Planes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Instructor\Planes.aspx.designer.cs">
+      <DependentUpon>Planes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -144,9 +208,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vista\Administrador\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

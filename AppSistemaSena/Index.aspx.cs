@@ -22,44 +22,40 @@ namespace AppSistemaSena
                 return;
             }
 
+            // Leer radio correctamente
+            string radioValor = Request.Form["tipo"];
+            string tipoUsuario = "";
+
+            if (radioValor == "Instructor")
+                tipoUsuario = "Instructor";
+            else if (radioValor == "Aprendiz")
+                tipoUsuario = "Aprendiz";
+            else if (radioValor == "Administrador")
+                tipoUsuario = "AdministradorCentro";
+
+            if (string.IsNullOrEmpty(tipoUsuario))
+            {
+                lblMensaje.Text = "Selecciona un tipo de usuario";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
             UsuarioLogin oDatosUsuario = new UsuarioLogin()
             {
                 Documento = txtDocumento.Text.Trim(),
                 Password = txtPassword.Text.Trim(),
             };
 
-            // VALIDAR TIPO SELECCIONADO
-            string tipoUsuario = "";
-
-            if (rbInstructor.Checked)
-            {
-                tipoUsuario = "Instructor";
-            }
-            else if (rbAprendiz.Checked)
-            {
-                tipoUsuario = "Aprendiz";
-            }
-            else if (rbAdministrador.Checked)
-            {
-                tipoUsuario = "AdministradorCentro";
-            }
-
             LoginL oLoginL = new LoginL();
-
             UsuarioLogin oDatosSesion = oLoginL.MtLogin(oDatosUsuario, tipoUsuario);
 
             if (oDatosSesion != null)
             {
-                lblMensaje.Text = "Ingreso exitoso como " + oDatosSesion.Nombre + " ";
-                lblMensaje.ForeColor = System.Drawing.Color.Green;
+                Session["UsuarioId"] = oDatosSesion.Id;
+                Session["UsuarioNombre"] = oDatosSesion.Nombre;
+                Session["Rol"] = tipoUsuario;
 
-                ClientScript.RegisterStartupScript(
-                    this.GetType(),
-                    "mensaje",
-                    "Swal.fire('Bienvenido', 'Has ingresado correctamente', 'success');",
-                    true
-                );
-                if(tipoUsuario == "Instructor")
+                if (tipoUsuario == "Instructor")
                 {
                     Response.Redirect("Vista/Instructor/IndexInstructor.aspx");
                 }
@@ -69,7 +65,7 @@ namespace AppSistemaSena
                 }
                 else if (tipoUsuario == "AdministradorCentro")
                 {
-                    Response.Redirect("Vista/AdministradorCentro/IndexAdministrador.aspx");
+                    Response.Redirect("Vista/Administrador/IndexAdmin.aspx");
                 }
             }
             else

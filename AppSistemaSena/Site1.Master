@@ -14,12 +14,20 @@
             padding: 0;
         }
 
+        html {
+            height: 100%;
+        }
+
         body {
+            height: 100%;
             font-family: 'Segoe UI', sans-serif;
             background: #f4f4f4;
+        }
+
+        form#form1 {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            height: 100vh;
         }
 
         /* ── HEADER ── */
@@ -27,7 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #1B3A6B;
+            background: #028f18;
             padding: 0 24px;
             height: 52px;
             flex-shrink: 0;
@@ -86,16 +94,18 @@
 
         /* ── LAYOUT PRINCIPAL ── */
         .main-layout {
-            flex: 1;
             display: flex;
+            flex: 1;
+            overflow: hidden;
         }
 
         /* ── SIDEBAR ── */
         .sidebar {
             width: 220px;
-            background: #1B3A6B;
+            background: #028f18;
             flex-shrink: 0;
             padding: 20px 0;
+            overflow-y: auto;
         }
 
         .sidebar-section-title {
@@ -133,6 +143,7 @@
             flex: 1;
             padding: 28px;
             overflow-y: auto;
+            background: #f4f4f4;
         }
     </style>
 
@@ -145,7 +156,7 @@
         <header class="header">
             <div class="header-logo">
                 <i class="ti ti-school"></i>
-                AppSistemaSena
+                SistemaSena
             </div>
             <div class="header-right">
                 <span class="header-user">
@@ -153,8 +164,7 @@
                     <asp:Label ID="lblUsuario" runat="server" />
                 </span>
                 <asp:LinkButton ID="btnCerrarSesion" runat="server"
-                    CssClass="btn-cerrar"
-                    OnClick="btnCerrarSesion_Click">
+                    CssClass="btn-cerrar" OnClick="btnCerrarSesion_Click">
                 <i class="ti ti-logout"></i> Cerrar sesión
                 </asp:LinkButton>
             </div>
@@ -170,7 +180,7 @@
                 <asp:Panel ID="pnlMenuAprendiz" runat="server" Visible="false">
                     <div class="sidebar-section-title">Aprendiz</div>
 
-                    <a href='<%= ResolveUrl("~/Aprendiz/MiPlan.aspx") %>'>
+                    <a href='<%= ResolveUrl("Vista/Aprendiz/MiPlan.aspx") %>'>
                         <i class="ti ti-clipboard-list"></i>Mi plan de mejoramiento
                     </a>
                     <a href='<%= ResolveUrl("~/Aprendiz/MisEvidencias.aspx") %>'>
@@ -204,18 +214,18 @@
                 <!-- Menú Administrador -->
                 <asp:Panel ID="pnlMenuAdmin" runat="server" Visible="false">
                     <div class="sidebar-section-title">Administrador</div>
-                    <a href='<%= ResolveUrl("~/Admin/Instructor.aspx") %>'>
+                    <a href='<%= ResolveUrl("Vista/Administrador/Instructores.aspx") %>'>
                         <i class="ti ti-users-group"></i>Instructores
                     </a>
-                    <a href='<%= ResolveUrl("~/Admin/Aprendices.aspx") %>'>
+                    <a href='<%= ResolveUrl("Vista/Administrador/Aprendices.aspx") %>'>
                         <i class="ti ti-users-group"></i>Aprendices
                     </a>
-                    <a href='<%= ResolveUrl("~/Admin/Fichas.aspx") %>'>
+                    <a href='<%= ResolveUrl("Vista/Administrador/Fichas.aspx") %>'>
                         <i class="ti ti-school"></i>Fichas
                     </a>
-                    <a href='<%= ResolveUrl("~/Admin/Programas.aspx") %>'>
+                    <a href='<%= ResolveUrl("Vista/Administrador/Programas.aspx") %>'>
                         <i class="ti ti-school"></i>Programas
-                        </a>
+                    </a>
                 </asp:Panel>
 
             </nav>
