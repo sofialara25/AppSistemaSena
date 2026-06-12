@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -27,19 +28,39 @@ namespace AppSistemaSena.Vista.Administrador
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 cn.Open();
+
+                //Ideal para GridView, DropDownList y reportes.
                 SqlDataAdapter da = new SqlDataAdapter(
                     "SELECT Id, TipoEstado FROM Estado ORDER BY TipoEstado", cn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
+                //Entonces eso queda guardado en dt
                 ddlEstado.DataSource = dt;
+                //Indica qué columna se mostrará al usuario.
                 ddlEstado.DataTextField = "TipoEstado";
+                //Indica qué valor se guardará internamente.
                 ddlEstado.DataValueField = "Id";
+                //Sin esta línea, el DropDown quedaría vacío.
                 ddlEstado.DataBind();
                 ddlEstado.Items.Insert(0, new ListItem("-- Seleccione --", "0"));
             }
         }
 
+//        SELECT Id, Nombre
+//        FROM Estado
+//            entonces tendrías que escribir:
+//            ddlEstado.DataTextField = "Nombre";
+//           ddlEstado.DataValueField = "Id";
+
+        //Se usa cuando necesitas recorrer registros.
+        //        SqlCommand cmd = new SqlCommand(sql, cn);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+
+        //while (dr.Read())
+        //{
+        //    Console.WriteLine(dr["Nombre"]);
+        //}
         private void CargarFichas()
         {
             using (SqlConnection cn = new SqlConnection(connectionString))
@@ -132,7 +153,7 @@ namespace AppSistemaSena.Vista.Administrador
                                 Telefono        = @Telefono,
                                 IdEstado        = @IdEstado
                             WHERE Id = @Id", cn);
-                    
+
 
                     cmd.Parameters.AddWithValue("@Id", id);
                 }
