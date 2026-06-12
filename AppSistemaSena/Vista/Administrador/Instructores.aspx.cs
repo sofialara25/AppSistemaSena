@@ -14,7 +14,6 @@ namespace AppSistemaSena.Vista.Administrador
         {
             if (!IsPostBack)
             {
-                CargarAreas();
                 CargarFichas();
                 CargarInstructores();
             }
@@ -37,7 +36,6 @@ namespace AppSistemaSena.Vista.Administrador
                 ddlArea.Items.Insert(0, new ListItem("-- Seleccione --", "0"));
             }
         }
-
         private void CargarFichas()
         {
             using (SqlConnection cn = new SqlConnection(connectionString))
@@ -101,54 +99,27 @@ namespace AppSistemaSena.Vista.Administrador
 
                 if (id == 0)
                 {
-                    // En INSERT siempre pedimos contraseña
-                    if (string.IsNullOrWhiteSpace(txtContrasena.Text))
-                    {
-                        MostrarMensaje("La contraseña es obligatoria.", false);
-                        return;
-                    }
-
                     cmd = new SqlCommand(@"
                         INSERT INTO Instructor
                             (TipoDocumento, NumeroDocumento, Nombre, Apellido,
-                             Correo, Contraseña, Telefono, IdArea, IdRol)
+                             Correo, Telefono, IdArea, IdRol)
                         VALUES
                             (@TipoDoc, @NumDoc, @Nombre, @Apellido,
-                             @Correo, @Contrasena, @Telefono, @IdArea, 1)", cn);
+                             @Correo, @Telefono, @IdArea, 1)", cn);
 
-                    cmd.Parameters.AddWithValue("@Contrasena", txtContrasena.Text.Trim());
                 }
                 else
                 {
-                    // En UPDATE la contraseña es opcional
-                    if (!string.IsNullOrWhiteSpace(txtContrasena.Text))
-                    {
-                        cmd = new SqlCommand(@"
-                            UPDATE Instructor SET
-                                TipoDocumento  = @TipoDoc,
-                                NumeroDocumento= @NumDoc,
-                                Nombre         = @Nombre,
-                                Apellido       = @Apellido,
-                                Correo         = @Correo,
-                                Contraseña     = @Contrasena,
-                                Telefono       = @Telefono,
-                                IdArea         = @IdArea
+                    cmd = new SqlCommand(@"
+                       UPDATE Instructor SET
+                            TipoDocumento  = @TipoDoc,
+                            NumeroDocumento= @NumDoc,
+                            Nombre         = @Nombre,
+                            Apellido       = @Apellido,
+                            Correo         = @Correo,
+                            Telefono       = @Telefono,
+                            IdArea         = @IdArea
                             WHERE Id = @Id", cn);
-                        cmd.Parameters.AddWithValue("@Contrasena", txtContrasena.Text.Trim());
-                    }
-                    else
-                    {
-                        cmd = new SqlCommand(@"
-                            UPDATE Instructor SET
-                                TipoDocumento  = @TipoDoc,
-                                NumeroDocumento= @NumDoc,
-                                Nombre         = @Nombre,
-                                Apellido       = @Apellido,
-                                Correo         = @Correo,
-                                Telefono       = @Telefono,
-                                IdArea         = @IdArea
-                            WHERE Id = @Id", cn);
-                    }
 
                     cmd.Parameters.AddWithValue("@Id", id);
                 }
@@ -276,7 +247,6 @@ namespace AppSistemaSena.Vista.Administrador
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtCorreo.Text = "";
-            txtContrasena.Text = "";
             txtTelefono.Text = "";
             CargarAreas();
             lblTituloForm.Text = "Nuevo Instructor";

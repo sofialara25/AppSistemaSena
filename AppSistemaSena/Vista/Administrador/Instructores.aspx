@@ -318,11 +318,6 @@
                     TextMode="Email" placeholder="correo@sena.edu.co" />
             </div>
             <div class="form-group">
-                <label>Contraseña</label>
-                <asp:TextBox ID="txtContrasena" runat="server"
-                    TextMode="Password" placeholder="••••••••" />
-            </div>
-            <div class="form-group">
                 <label>Teléfono</label>
                 <asp:TextBox ID="txtTelefono" runat="server" placeholder="Ej: 3111111111" />
             </div>

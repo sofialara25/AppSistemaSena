@@ -111,12 +111,6 @@ namespace AppSistemaSena.Vista.Administrador
 
                 if (id == 0)
                 {
-                    if (string.IsNullOrWhiteSpace(txtContrasena.Text))
-                    {
-                        MostrarMensaje("La contraseña es obligatoria.", false);
-                        return;
-                    }
-
                     cmd = new SqlCommand(@"
                         INSERT INTO Aprendiz
                             (TipoDocumento, NumeroDocumento, Nombre, Apellido,
@@ -125,28 +119,10 @@ namespace AppSistemaSena.Vista.Administrador
                             (@TipoDoc, @NumDoc, @Nombre, @Apellido,
                              @Correo, @Contrasena, @Telefono, @IdEstado, 2)", cn);
 
-                    cmd.Parameters.AddWithValue("@Contrasena", txtContrasena.Text.Trim());
                 }
                 else
                 {
-                    if (!string.IsNullOrWhiteSpace(txtContrasena.Text))
-                    {
-                        cmd = new SqlCommand(@"
-                            UPDATE Aprendiz SET
-                                TipoDocumento   = @TipoDoc,
-                                NumeroDocumento = @NumDoc,
-                                Nombre          = @Nombre,
-                                Apellido        = @Apellido,
-                                Correo          = @Correo,
-                                Contraseña      = @Contrasena,
-                                Telefono        = @Telefono,
-                                IdEstado        = @IdEstado
-                            WHERE Id = @Id", cn);
-                        cmd.Parameters.AddWithValue("@Contrasena", txtContrasena.Text.Trim());
-                    }
-                    else
-                    {
-                        cmd = new SqlCommand(@"
+                    cmd = new SqlCommand(@"
                             UPDATE Aprendiz SET
                                 TipoDocumento   = @TipoDoc,
                                 NumeroDocumento = @NumDoc,
@@ -156,7 +132,7 @@ namespace AppSistemaSena.Vista.Administrador
                                 Telefono        = @Telefono,
                                 IdEstado        = @IdEstado
                             WHERE Id = @Id", cn);
-                    }
+                    
 
                     cmd.Parameters.AddWithValue("@Id", id);
                 }
@@ -428,7 +404,6 @@ namespace AppSistemaSena.Vista.Administrador
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtCorreo.Text = "";
-            txtContrasena.Text = "";
             txtTelefono.Text = "";
             CargarEstados();
             lblTituloForm.Text = "Nuevo Aprendiz";

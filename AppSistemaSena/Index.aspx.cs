@@ -53,6 +53,7 @@ namespace AppSistemaSena
             {
                 Session["UsuarioId"] = oDatosSesion.Id;
                 Session["UsuarioNombre"] = oDatosSesion.Nombre;
+                Session["Documento"] = oDatosSesion.Documento;
                 Session["Rol"] = tipoUsuario;
 
                 if (tipoUsuario == "Instructor")

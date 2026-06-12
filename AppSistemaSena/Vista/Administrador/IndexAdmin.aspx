@@ -89,7 +89,7 @@
 
         .quick-link i {
             font-size: 22px;
-            color: #C8A94A;
+            color: #028f18;
         }
     </style>
 </asp:Content>

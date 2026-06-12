@@ -197,13 +197,13 @@
                 <!-- Menú Instructor -->
                 <asp:Panel ID="pnlMenuInstructor" runat="server" Visible="false">
                     <div class="sidebar-section-title">Instructor</div>
-                    <a href='<%= ResolveUrl("~/Instructor/Fichas.aspx") %>'>
+                    <a href='<%= ResolveUrl("~/Vista/Instructor/Fichas.aspx") %>'>
                         <i class="ti ti-users"></i>Mis Fichas
                     </a>
-                    <a href='<%= ResolveUrl("~/Instructor/Planes.aspx") %>'>
+                    <a href='<%= ResolveUrl("~/Vista/Instructor/Planes.aspx") %>'>
                         <i class="ti ti-clipboard-list"></i>Planes de mejoramiento
                     </a>
-                    <a href='<%= ResolveUrl("~/Instructor/Evaluar.aspx") %>'>
+                    <a href='<%= ResolveUrl("~/Vista/Instructor/Evaluar.aspx") %>'>
                         <i class="ti ti-checkbox"></i>Evaluar aprendices
                     </a>
                     <%--<a href='<%= ResolveUrl("~/Instructor/Criterios.aspx") %>'>

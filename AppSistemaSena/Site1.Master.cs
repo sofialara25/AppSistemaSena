@@ -29,7 +29,7 @@ namespace AppSistemaSena
         {
             Session.Clear();
             Session.Abandon();
-            Response.Redirect("Index.aspx");
+            Response.Redirect("~/Index.aspx");
         }
     }
 }
